@@ -16,7 +16,6 @@ class SendingComment {
 
       let quantitysumbol:number = this.textarea.value.length;
       
-      if(quantitysumbol){
         if (quantitysumbol > 0) {
         quantity.innerHTML = `${quantitysumbol}/1000`;
         if (quantitysumbol > 1000) {
@@ -33,7 +32,6 @@ class SendingComment {
         } else {
         btn.classList.remove(`active`);
         }
-      }
     };
   }
 

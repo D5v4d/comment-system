@@ -13,26 +13,24 @@ class SendingComment {
             let btn = document.querySelector(".btn__comment");
             let quantity = document.querySelector(".quantity__characters");
             let quantitysumbol = this.textarea.value.length;
-            if (quantitysumbol) {
-                if (quantitysumbol > 0) {
-                    quantity.innerHTML = `${quantitysumbol}/1000`;
-                    if (quantitysumbol > 1000) {
-                        quantity.style.color = "red";
-                    }
-                    else {
-                        quantity.style.color = "";
-                    }
+            if (quantitysumbol > 0) {
+                quantity.innerHTML = `${quantitysumbol}/1000`;
+                if (quantitysumbol > 1000) {
+                    quantity.style.color = "red";
                 }
                 else {
-                    quantity.innerHTML = "Макс. 1000 символов";
                     quantity.style.color = "";
                 }
-                if (quantitysumbol > 0 && quantitysumbol <= 1000) {
-                    btn.classList.add(`active`);
-                }
-                else {
-                    btn.classList.remove(`active`);
-                }
+            }
+            else {
+                quantity.innerHTML = "Макс. 1000 символов";
+                quantity.style.color = "";
+            }
+            if (quantitysumbol > 0 && quantitysumbol <= 1000) {
+                btn.classList.add(`active`);
+            }
+            else {
+                btn.classList.remove(`active`);
             }
         };
     }
