@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>comment system</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="block__comment">
+      <ul class="block__comment__head">
+        <li class="block__comment__head__comment activ">
+          Комментарии <span class="quantity__comment"></span>
+        </li>
+        <div class="block__comment__head__filter">
+          <span class="filter__name">По количеству оценок</span>
+          <ul class="filter">
+            <li class="block__comment__head__data">По дате</li>
+            <li class="block__comment__head__grade check_mark">По количеству оценок</li>
+            <li class="block__comment__head__answer">По количеству ответов</li>
+          </ul>
+        </div>
+        <img class="arrow" src="img/arrow-button.svg" alt="arrow" />
+        <li class="block__comment__head__favorites">Избранное</li>
+        <img class="love" src="img/love-favorites.svg" alt="love" />
+      </ul>
+
+      <div class="block__comment__sending">
+        <img class="block__comment__img__profile">
+        <span class="block__comment__full__name"></span>
+        <span class="quantity__characters">Макс. 1000 символов</span>
+        <textarea
+          name="text"
+          id="textarea"
+          placeholder="Введите текст сообщения..."
+          required
+        ></textarea>
+        <button class="btn__comment">Отправить</button>
+      </div>
+      <div class="comment">
+      </div>
+    </div>
+    <script src="./js/storage.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/sending-comment.js"></script>
+    <script src="./js/messag.js"></script>
+    <script src="./js/filter.js" ></script>
+    <script src="./js/index.js" ></script>
+  </body>
+</html>
