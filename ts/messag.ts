@@ -421,8 +421,8 @@ class Messag {
         target.classList.contains("block__comment__sent__favorites") ||
         target.classList.contains("img__favorites")
       ) {
-        let faforitesFlag = (target.parentNode as HTMLElement)
-        faforitesFlag.classList.toggle("favorites");
+        let targetparentNode = (target.parentNode as HTMLElement)
+        const faforitesFlag: boolean = targetparentNode.classList.toggle("favorites");
 
         this.listComments = JSON.parse(localStorage.getItem("comments") as string) ?? [];
 

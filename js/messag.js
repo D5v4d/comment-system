@@ -302,8 +302,8 @@ class Messag {
             let target = e.target;
             if (target.classList.contains("block__comment__sent__favorites") ||
                 target.classList.contains("img__favorites")) {
-                let faforitesFlag = target.parentNode;
-                faforitesFlag.classList.toggle("favorites");
+                let targetparentNode = target.parentNode;
+                const faforitesFlag = targetparentNode.classList.toggle("favorites");
                 this.listComments = JSON.parse(localStorage.getItem("comments")) ?? [];
                 this.listComments.forEach((comment) => {
                     let nameSent = target.parentNode.querySelector(".block__comment__full__name").innerHTML;

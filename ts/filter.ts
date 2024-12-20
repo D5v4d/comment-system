@@ -66,15 +66,23 @@ class Filter {
     this.filterImg();
 
     // Добавляем событие для открытия меню только один раз
-    this.selectedFilter.addEventListener("click", () => {
-      if (this.blockMenu){
-        this.blockMenu = false;
-        this.filterMenu.style.display = `none`; // Закрываем меню
+    document.addEventListener("click", (e) => {
+      let target = (e.target as Element)
+      if (target.classList.contains("filter__name")){
+        if(!this.blockMenu){
+          this.filterMenu.style.display = `block`;
+          this.blockMenu = true;
+        } else {
+          this.blockMenu = false;
+          this.filterMenu.style.display = `none`; // Закрываем меню
+        } 
       }else{
-        this.filterMenu.style.display = `block`;
-        this.blockMenu = true;
+        if(this.blockMenu){
+          this.blockMenu = false;
+          this.filterMenu.style.display = `none`; // Закрываем меню
+        }
       } 
-      });
+    });
   }
 
 
